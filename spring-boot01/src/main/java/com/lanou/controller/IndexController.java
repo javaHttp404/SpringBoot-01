@@ -14,20 +14,21 @@ import com.lanou.service.AuthService;
 public class IndexController {
 
 	private Logger log = Logger.getLogger(IndexController.class);
-	
+
 	@Resource
 	private AuthUserMapper authUserMapper;
-	
+
 	@RequestMapping("/index")
 	public String index() {
+		// ghjkghjkhj
 		log.info("进入index");
 		return "index";
 	}
-	
+
 	@ResponseBody
 	@RequestMapping("/userAll")
 	public Object users() {
 		return authUserMapper.selectAll();
 	}
-	
+
 }
