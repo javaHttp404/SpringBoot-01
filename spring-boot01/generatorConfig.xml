@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- 数据库驱动 -->
+	<classPathEntry
+
+		location="D:\Repositories\Maven\mysql\mysql-connector-java\5.1.44\mysql-connector-java-5.1.44.jar"></classPathEntry>
+	<context id="context1">
+		<!-- 数据库的连接信息 -->
+		<jdbcConnection connectionURL="jdbc:mysql://localhost:3306/oa"
+			driverClass="com.mysql.jdbc.Driver" password="root"
+			userId="root" />
+		<!-- 实体类 -->
+		<javaModelGenerator targetPackage="com.lanou.entity"
+			targetProject="spring-boot01/src/main/java" />
+
+		<!-- mapper.xml的生成 -->
+		<sqlMapGenerator targetPackage="com.lanou.mapper"
+			targetProject="spring-boot01/src/main/java" />
+		<!-- mapper 接口 -->
+		<javaClientGenerator targetPackage="com.lanou.mapper"
+			targetProject="spring-boot01/src/main/java" type="XMLMAPPER" />
+
+
+		
+		<!-- 12数据库表 tableName 表名 domainObjectName 类名 -->
+		<table tableName="sys_employee" domainObjectName="AuthUser"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+			<!-- 驼峰命名 -->
+			<property name="useActualColumnNames" value="true" />
+		</table>
+	</context>
+</generatorConfiguration>
